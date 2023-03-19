@@ -9,7 +9,7 @@ function CartSummary() {
       const user = JSON.parse(localStorage.getItem("user"));
       if (user.cart.length !== 0) {
         axios
-          .post("http://localhost:8000/api/products/multiple", { ids: user.cart })
+          .post("https://shopping-app-backend-umber.vercel.app/api/products/multiple", { ids: user.cart })
           .then((response) => {
             setItemsInCart(response.data.response);
           })

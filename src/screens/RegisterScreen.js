@@ -19,7 +19,7 @@ function RegisterScreen() {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:8000/api/users/register", userInfo)
+      .post("https://shopping-app-backend-umber.vercel.app/api/users/register", userInfo)
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token);

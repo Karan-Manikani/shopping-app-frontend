@@ -14,7 +14,9 @@ function ProfileScreen() {
 
   function deleteAccount() {
     axios
-      .delete("http://localhost:8000/api/users/me", { headers: { Authorization: localStorage.getItem("token") } })
+      .delete("https://shopping-app-backend-umber.vercel.app/api/users/me", {
+        headers: { Authorization: localStorage.getItem("token") },
+      })
       .then(() => logout())
       .then(() => console.log("Logout success"))
       .catch((error) => console.log(error));

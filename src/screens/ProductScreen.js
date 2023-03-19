@@ -10,7 +10,7 @@ function ProductScreen() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios("http://localhost:8000/api/products/" + id);
+      const result = await axios("https://shopping-app-backend-umber.vercel.app/api/products/" + id);
       setProduct(result.data.response);
     }
     fetchData();
@@ -25,7 +25,7 @@ function ProductScreen() {
     if (localStorage.getItem("loggedIn")) {
       axios
         .patch(
-          "http://localhost:8000/api/users/cart/add",
+          "https://shopping-app-backend-umber.vercel.app/api/users/cart/add",
           { productId: id },
           { headers: { Authorization: localStorage.getItem("token") } }
         )

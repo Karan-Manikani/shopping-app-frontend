@@ -7,7 +7,7 @@ function HomeScreen() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await axios("http://localhost:8000/api/products?page_size=10&page=1");
+      const result = await axios("https://shopping-app-backend-umber.vercel.app/api/products?page_size=10&page=1");
       setProducts(result.data.response.products);
     }
     fetchData();
